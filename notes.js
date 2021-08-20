@@ -27,3 +27,14 @@ wiskers.sayHi();
   }
 }
 */
+
+/*
+REACT STATE NOTES
+- We will use Class components whenever we need state for our componet
+
+- Any time we update state the component's render will be called
+
+CREATING A REACT CLASS COMPONENT
+- Create a class that extends the React.Component class.
+- Our Component class must have a render method that returns JSX.
+*/
