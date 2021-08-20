@@ -6,31 +6,48 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    count: 0
+    count: 0,
+    lightsOn: true
   }
 
   handleDecrementClick = () => {
-    // TODO: Update the count in state
-    // Set the value of count to the current value - 1
-
+    // Decrease the count by one only if it is not already 0
     if (this.state.count !== 0) {
       this.setState({ count: this.state.count - 1 });
     }
   }
 
   handleIncrementClick = () => {
+    // Increase the count by one
     this.setState({ count: this.state.count + 1 });
   }
 
+  handleLightsClick = () => {
+    // Update lightsOn to the opposite of whatever it was before
+    this.setState({ lightsOn: !this.state.lightsOn })
+  }
+
   render() {
+    const pageStyles = {
+      backgroundColor: this.state.lightsOn ? 'white' : 'black',
+      color: this.state.lightsOn ? 'black' : 'white',
+      height: '100vh'
+    }
+
     return (
-      <div className="App">
+      <div className="App" style={pageStyles}>
         <h1>Counter App</h1>
   
         <p>Count: {this.state.count}</p>
+
+        <p>{this.state.lightsOn ? 'Lights Are On' : 'Lights Are Off'}</p>
   
         <button onClick={this.handleDecrementClick}>Decrement -</button>
         <button onClick={this.handleIncrementClick}>Increment +</button>
+
+        <button onClick={this.handleLightsClick}>
+          {this.state.lightsOn ? 'Turn Lights Off' : 'Turn Lights On'}
+        </button>
       </div>
     );
   }
