@@ -34,7 +34,7 @@ REACT STATE NOTES
 
 - Any time we update state the component's render will be called
 
-- React is declaritive - We simply declare what we want to see on the page, and React takes care of all of the details.
+- React is declarative - We simply declare what we want to see on the page, and React takes care of all of the details.
 
 CREATING A REACT CLASS COMPONENT
 - Create a class that extends the React.Component class.
